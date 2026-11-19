@@ -153,7 +153,7 @@ function fatal(message, err, delayMs = 30000) {
 
 const token = process.env.TOKEN;
 if (!token) {
-  fatal("MTMzNzQxMDYwNDg3MjY4MjMx.QwzeWIDEFGj5iWtJHKN-TqgdCY0.GFqBia.OYpzc-kyNdZ06ytS0zcibDN5VT07agr9dNEqns");
+  fatal("TOKEN is not set: add the repo secret TOKEN (Settings > Secrets and variables > Actions) or export TOKEN.");
 } else {
   process.on("unhandledRejection", (err) => fatal("Unhandled rejection:", err));
   client.login(token).catch((err) => fatal("Login failed:", err, 60000));
